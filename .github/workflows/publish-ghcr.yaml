@@ -1,0 +1,54 @@
+name: "Publish GHCR"
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    types:
+      - completed
+    branches:
+      - "feature/**"
+      - "fix/**"
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+
+jobs:
+  build-and-push-images:
+    runs-on: ["ubuntu-22.04"]
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@3d58c274f17dffee475a5520cbe67f0a882c4dbb
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: lower-repo
+        run: echo "repository=$(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
+        with:
+          images: ${{ env.REGISTRY }}/${{ steps.lower-repo.outputs.repository }}
+
+      - id: vars
+        run: echo "sha_short=$(git rev-parse HEAD | cut -c1-8)" >> $GITHUB_OUTPUT
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@4976231911ebf5f32aad765192d35f942aa48cb8
+        with:
+          file: ./docker/Dockerfile.prod
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.tags }}-${{ steps.vars.outputs.sha_short }}
+          labels: ${{ steps.meta.outputs.labels }}

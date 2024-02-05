@@ -1,0 +1,9 @@
+*.py @Aeternalis-Ingenium
+*.md @Aeternalis-Ingenium
+*.txt @Aeternalis-Ingenium
+*.toml @Aeternalis-Ingenium
+*.yaml @Aeternalis-Ingenium
+*.yml @Aeternalis-Ingenium
+*.json @Aeternalis-Ingenium
+*.sh @Aeternalis-Ingenium
+DOCKERFILE.* @Aeternalis-Ingenium

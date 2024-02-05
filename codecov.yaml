@@ -1,0 +1,14 @@
+coverage:
+  status:
+    project: False
+    patch: False
+
+flag_management:
+  individual_flags:
+    - name: v4vision
+      paths:
+        - src/
+      statuses:
+        - type: project
+          target: 80%
+          threshold: 1%

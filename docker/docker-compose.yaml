@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  pleno:
+    container_name: app
+    restart: always
+    build:
+      dockerfile: docker/Dockerfile.dev
+      context: ../
+    environment:
+      - ACCESS_LOGGER=${ACCESS_LOGGER}
+      - ALL_HEADERS=${ALL_HEADERS}
+      - API_PREFIX=${API_PREFIX}
+      - APP_ENV=${APP_ENV}
+      - APP_VERSION=${APP_VERSION}
+      - ASGI_LOGGER=${ASGI_LOGGER}
+      - DOCS_URL=${DOCS_URL}
+      - IS_ALLOWED_CREDENTIALS=${IS_ALLOWED_CREDENTIALS}
+      - METHOD_1=${METHOD_1}
+      - METHOD_2=${METHOD_2}
+      - METHOD_3=${METHOD_3}
+      - METHOD_4=${METHOD_4}
+      - METHOD_5=${METHOD_5}
+      - OPENAPI_URL=${OPENAPI_URL}
+      - REDOC_URL=${REDOC_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - SERVER_HOST=${SERVER_HOST}
+      - SERVER_PORT=${SERVER_PORT}
+      - SERVER_WORKERS=${SERVER_WORKERS}
+    volumes:
+      - app-chache:/usr/app/
+    ports:
+      - 8000:8000
+
+volumes:
+  app-chache: {}
