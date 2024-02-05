@@ -3,7 +3,7 @@ requires = ["setuptools>=69.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fast_api"
+name = "jumpstart"
 description = "A template for API application with FastAPI, Docker, Pre-Commit, and GitHub Actions"
 readme = "README.md"
 version = "1.0.0"
