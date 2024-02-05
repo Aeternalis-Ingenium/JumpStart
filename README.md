@@ -1,5 +1,32 @@
 # API Application Template
 
+<p align="center">
+    <a href="https://app.codecov.io/gh/Aeternalis-Ingenium/JumpStart/tree/trunk" >
+        <img src="https://codecov.io/gh/Aeternalis-Ingenium/JumpStart/graph/badge.svg?token=qSZUkjga7N"/>
+    </a>
+    <a href="https://results.pre-commit.ci/latest/github/Aeternalis-Ingenium/JumpStart/trunk">
+        <img src="https://results.pre-commit.ci/badge/github/Aeternalis-Ingenium/JumpStart/trunk.svg" alt="pre-commit.ci status">
+    </a>
+    <a href="https://github.com/psf/black">
+        <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black">
+    </a>
+    <a href="https://pycqa.github.io/isort/">
+        <img src="https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336" alt="Imports: isort">
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/badge/mypy-checked-blue" alt="mypy checked">
+    </a>
+    <a href="https://github.com/Aeternalis-Ingenium/JumpStart/actions/workflows/ci.yaml">
+        <img src="https://github.com/Aeternalis-Ingenium/JumpStart/actions/workflows/ci.yaml/badge.svg" alt="Continuous Integration">
+    </a>
+    <a href="https://github.com/Aeternalis-Ingenium/JumpStart/blob/trunk/LICENSE">
+        <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+    </a>
+    <a href="https://github.com/Aeternalis-Ingenium/JumpStart/blob/trunk/README.md">
+        <img src="https://img.shields.io/badge/docs-passing-brightgreen.svg" alt="Documentation">
+    </a>
+</p>
+
 This template is created to jump-start your API development by providing the setup from a real-world project! This template utilizes the following tech stack:
 
 * 🐍 [Python](https://www.python.org/) v3.12.1 or higher.
