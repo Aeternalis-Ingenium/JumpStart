@@ -12,10 +12,9 @@ authors = [
     {name = "Nino Lindenberg", email = "aeternalis-ingenium@proton.me"}
 ]
 keywords = [
-    "machine learning",
-    "multimodality",
-    "radiology",
-    "medical images",
+    "software engineering",
+    "api application",
+    "application template",
 ]
 classifiers = [
     "Intended Audience :: Developers",
@@ -38,8 +37,8 @@ dependencies = [
 ]
 
 [project.urls]
-repository = "https://github.com/Aeternalis-Ingenium/Fast-API"
-documentation = "https://github.com/Aeternalis-Ingenium/Fast-API/blob/trunk/README.md"
+repository = "https://github.com/Aeternalis-Ingenium/JumpStart"
+documentation = "https://github.com/Aeternalis-Ingenium/JumpStart/blob/trunk/README.md"
 
 [project.optional-dependencies]
 linter = [
